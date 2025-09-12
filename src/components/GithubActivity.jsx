@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function GithubActivity() {
-  const [data, setData] = useState(null);
+  const [info, setInfo] = useState(null);
 
   useEffect(() => {
     const fetchGitHubData = async () => {
@@ -43,14 +43,16 @@ function GithubActivity() {
 
       const json = await response.json();
       console.log("🔍 Full API response:", JSON.stringify(json, null, 2));
-      setData(json.data.user);
+      setInfo(json.data.user);
     };
 
     fetchGitHubData();
   }, []);
 
-  const repoCount = data.publicRepos?.totalCount ?? 0;
-  const latestRepo = data.latestRepo?.nodes?.[0];
+  if (!info) return <p>Loading...</p>;
+
+  const repoCount = info.publicRepos?.totalCount ?? 0;
+  const latestRepo = info.latestRepo?.nodes?.[0];
   const lastCommit = latestRepo?.defaultBranchRef?.target;
 
   return (
