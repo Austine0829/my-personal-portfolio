@@ -57,14 +57,14 @@ function GithubActivity() {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center overflow-x-hidden border h-full p-5 rounded-lg">
+      <div className="flex flex-col justify-center items-center text-center overflow-x-hidden border h-full p-5 rounded-lg">
         <h1 className="text-[clamp(.2rem,2.5vw,1rem)]">
           Github | {new Date(lastCommit.committedDate).toDateString()}
         </h1>
-        <p className="text-[clamp(.8rem,3vw,1rem)] text-center font-bold">
+        <p className="text-[clamp(.8rem,3vw,1rem)] font-bold">
           {latestRepo.name}
         </p>
-        <h2 className="text-[clamp(.6rem,2.5vw,1rem)] text-center" >
+        <h2 className="text-[clamp(.6rem,2.5vw,1rem)]" >
           {lastCommit.messageHeadline}
         </h2>
       </div>
