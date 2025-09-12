@@ -1,4 +1,5 @@
 import GithubActivity from "./GithubActivity";
+import LastDotFm from "./LastDotFm";
 
 function RecentActivities() {
   return (
@@ -10,7 +11,9 @@ function RecentActivities() {
         <div className="col-span-6 row-span-5">
           <GithubActivity />
         </div>
-        <div className="border p-1 col-span-6 row-span-5"></div>
+        <div className="col-span-6 row-span-5">
+          <LastDotFm />
+        </div>
       </div>
     </>
   );
