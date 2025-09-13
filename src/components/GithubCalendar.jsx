@@ -88,28 +88,26 @@ function GithubCalendar() {
 
   return (
     <>
-      <div className="overflow-x">
-        {contributionData.length > 0 ? (
-          <div className="border p-2 rounded-lg">
-            <ActivityCalendar
-              data={contributionData}
-              blockSize={10}
-              blockMargin={3}
-              blockRadius={2}
-              fontSize={10}
-              hideTotalCount
-              hideColorLegend
-              theme={{
-                light: ["#DADADA", "#AAAAAA", "#797979", "#494949", "#181818",],
-                dark: ["#DADADA", "#AAAAAA", "#797979", "#494949", "#181818",]
-              }}
-            />
-            <p className="text-[10px] mt-1">{username} Github commits from 2024-16-02 to Present</p>
-          </div>
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
+      {contributionData.length > 0 ? (
+        <div className="border border-gray-300 bg-white p-2 rounded-lg">
+          <ActivityCalendar
+            data={contributionData}
+            blockSize={10}
+            blockMargin={3}
+            blockRadius={2}
+            fontSize={10}
+            hideTotalCount
+            hideColorLegend
+            theme={{
+              light: ["#DADADA", "#AAAAAA", "#797979", "#494949", "#181818",],
+              dark: ["#DADADA", "#AAAAAA", "#797979", "#494949", "#181818",]
+            }}
+          />
+          <p className="text-[10px] mt-1">{username} Github commits from 2024-16-02 to Present</p>
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
     </>
   );
 }
