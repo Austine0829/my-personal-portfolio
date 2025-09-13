@@ -47,15 +47,15 @@ function GithubRepoAndContri() {
       <div className="grid grid-cols-12 gap-2">
         <div className="flex flex-col text-center border p-5 col-span-4 rounded-lg">
           <i className="si si-github text-2xl"></i>
-          <span className="text-[clamp(.8rem,2vw,1rem)] font-bold">Github Stats</span>
+          <span className="text-[13px] font-bold">Github Stats</span>
         </div>
         <div className="flex flex-col justify-center items-center text-center border p-5 col-span-4 rounded-lg">
-          <span className="text-[clamp(.8rem,2vw,1rem)] font-bold">{repoCount}</span>
-          <span className="text-[clamp(.7rem,2vw,1rem)]">Repositories</span>
+          <span className="text-[13px] font-bold">{repoCount}</span>
+          <span className="text-[10px]">Repositories</span>
         </div>
         <div className="flex flex-col justify-center items-center text-center border p-5 col-span-4 rounded-lg">
-          <span className="text-[clamp(.8rem,2vw,1rem)] font-bold">{totalContributions}</span>
-          <span className="text-[clamp(.7rem,2vw,1rem)]">Contributions</span>
+          <span className="text-[13px] font-bold">{totalContributions}</span>
+          <span className="text-[10px]">Contributions</span>
         </div>
       </div>
     </>
