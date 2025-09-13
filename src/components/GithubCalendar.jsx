@@ -104,7 +104,7 @@ function GithubCalendar() {
                 dark: ["#DADADA", "#AAAAAA", "#797979", "#494949", "#181818",]
               }}
             />
-            <p className="text-[clamp(.6rem,2vw,.7rem)] mt-1">{username} Github commits from 2024-16-02 to Present</p>
+            <p className="text-[10px] mt-1">{username} Github commits from 2024-16-02 to Present</p>
           </div>
         ) : (
           <p>Loading...</p>
