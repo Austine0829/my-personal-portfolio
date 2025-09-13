@@ -94,7 +94,7 @@ function GithubCalendar() {
             <ActivityCalendar
               data={contributionData}
               blockSize={10}
-              blockMargin={2}
+              blockMargin={3}
               blockRadius={2}
               fontSize={10}
               hideTotalCount
