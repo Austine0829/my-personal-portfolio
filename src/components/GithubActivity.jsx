@@ -57,16 +57,21 @@ function GithubActivity() {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center text-center overflow-x-hidden border h-full p-5 rounded-lg">
-        <h1 className="text-[10px]">
-          Github | {new Date(lastCommit.committedDate).toDateString()}
-        </h1>
-        <p className="text-[13px] font-bold">
-          {latestRepo.name}
-        </p>
-        <h2 className="text-[10px]" >
-          {lastCommit.messageHeadline}
-        </h2>
+      <div className="flex gap-2 overflow-x-hidden border h-full p-5 rounded-lg bg-white border-gray-300">
+        <div className="hidden border w-fit px-2 rounded-lg md:flex bg-white border-gray-300">
+          <i className="si si-github text-[50px]"></i>
+        </div>
+        <div className="flex flex-col justify-center text-center md:justify-start md:text-start">
+          <h1 className="text-[10px]">
+            Github | {new Date(lastCommit.committedDate).toDateString()}
+          </h1>
+          <p className="text-[13px] font-bold">
+            {latestRepo.name}
+          </p>
+          <h2 className="text-[10px]" >
+            {lastCommit.messageHeadline}
+          </h2>
+        </div>
       </div>
     </>
   );
