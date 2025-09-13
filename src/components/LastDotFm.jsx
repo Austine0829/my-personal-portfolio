@@ -33,21 +33,30 @@ function LastDotFm() {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center text-center overflow-x-hidden border h-full p-5 rounded-lg bg-white text-white"
+      <div className="flex gap-2 overflow-x-hidden border h-full p-5 rounded-lg bg-white text-white"
         style={{
           backgroundImage: `url(${defaultMusicImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}>
-        <h1 className="text-[10px] truncate">
-          Last.fm | last played song...
-        </h1>
-        <p className="text-[13px] font-bold">
-          {track.name}
-        </p>
-        <h2 className="text-[10px]" >
-          {track.artist}
-        </h2>
+        <div className="hidden border p-1 w-20 rounded-lg md:flex"
+          style={{
+            backgroundImage: `url(${defaultMusicImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center"
+          }}>
+        </div>
+        <div className="flex flex-col text-center justify-center md:text-start md:justify-start">
+          <h1 className="text-[10px] truncate">
+            Last.fm | last played song...
+          </h1>
+          <p className="text-[13px] font-bold">
+            {track.name}
+          </p>
+          <h2 className="text-[10px]" >
+            {track.artist}
+          </h2>
+        </div>
       </div>
     </>);
 }
