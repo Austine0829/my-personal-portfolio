@@ -44,7 +44,7 @@ function GithubRepoAndContri() {
 
   return (
     <>
-      <div className="grid grid-cols-12 gap-2">
+      <div className="grid grid-cols-12 gap-1">
         <div className="flex flex-col text-center border p-5 col-span-4 rounded-lg">
           <i className="si si-github text-2xl"></i>
           <span className="text-[13px] font-bold">Github Stats</span>
