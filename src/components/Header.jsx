@@ -7,7 +7,7 @@ function Header() {
         <div className='animate-bounce'>
           <MapPinIcon className='w-5' />
         </div>
-        <span className="text-[clamp(.8rem,3vw,1rem)] font-bold">
+        <span className="text-[13px] font-bold">
           Philippines
         </span>
       </div>
