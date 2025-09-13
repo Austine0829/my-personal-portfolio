@@ -3,7 +3,7 @@ import { MapPinIcon } from '@heroicons/react/24/outline'
 function Header() {
   return (
     <>
-      <div className="flex items-center border border-gray-300 bg-white p-2 rounded-lg">
+      <div className="flex items-center border border-gray-300 bg-white p-3 rounded-lg">
         <div className='animate-bounce'>
           <MapPinIcon className='w-5' />
         </div>
