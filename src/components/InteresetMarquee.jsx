@@ -3,11 +3,11 @@ import Marquee from "react-fast-marquee";
 function InterestMarquee() {
   return (
     <>
-      <div className="flex gap-1">
-        <div className="flex items-center border border-gray-300 bg-white p-5 rounded-lg">
+      <div className="grid grid-cols-12 gap-1">
+        <div className="flex justify-center items-center col-span-4 border border-gray-300 bg-white p-5 rounded-lg xl:col-span-2">
           <h1 className="text-[13px] font-bold">Interest</h1>
         </div>
-        <div className="border border-gray-300 bg-white w-full p-1 rounded-lg">
+        <div className="border col-span-8 border-gray-300 bg-white p-1 rounded-lg xl:col-span-10">
           <Marquee>
             <div className="bg-gray-200 p-5 rounded-lg">
               <span className="text-[10px]">Interest</span>
