@@ -39,13 +39,13 @@ function LastDotFm() {
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}>
-        <h1 className="text-[clamp(.2rem,2.5vw,1rem)]">
+        <h1 className="text-[10px] truncate">
           Last.fm | last played song...
         </h1>
-        <p className="text-[clamp(.8rem,3vw,1rem)] font-bold">
+        <p className="text-[13px] font-bold">
           {track.name}
         </p>
-        <h2 className="text-[clamp(.6rem,2.5vw,1rem)]" >
+        <h2 className="text-[10px]" >
           {track.artist}
         </h2>
       </div>
