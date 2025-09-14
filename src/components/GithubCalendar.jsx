@@ -3,6 +3,7 @@ import ActivityCalendar from "react-activity-calendar";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { SKELETON_COLOR } from "../constants/constants";
+import { USERNAME } from "../constants/constants";
 
 async function fetchYearContributions(username, year, token) {
   const query = `
@@ -41,20 +42,17 @@ async function fetchYearContributions(username, year, token) {
 
 function GithubCalendar() {
   const [contributionData, setContributionData] = useState([]);
-  const username = import.meta.env.VITE_GITHUB_USERNAME;
 
   useEffect(() => {
     const fetchAllYears = async () => {
       try {
-        const token = import.meta.env.VITE_GITHUB_TOKEN;
-
         const startYear = 2024;
         const currentYear = new Date().getFullYear();
 
         let allDays = [];
 
         for (let year = startYear; year <= currentYear; year++) {
-          const yearData = await fetchYearContributions(username, year, token);
+          const yearData = await fetchYearContributions(USERNAME, year, import.meta.env.VITE_GITHUB_TOKEN);
           allDays = [...allDays, ...yearData];
         }
 
@@ -116,7 +114,7 @@ function GithubCalendar() {
               dark: ["#DADADA", "#AAAAAA", "#797979", "#494949", "#181818",]
             }}
           />
-          <p className="text-[10px] mt-1">{username} Github commits from 2024-16-02 to Present</p>
+          <p className="text-[10px] mt-1">{USERNAME} Github commits from 2024-16-02 to Present</p>
         </div>
       ) : (
         <Skeleton borderRadius={7}
