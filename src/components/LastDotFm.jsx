@@ -32,7 +32,7 @@ function LastDotFm() {
     fetchNowPlaying();
   }, []);
 
-  if (track) return (
+  if (!track) return (
     <>
       <Skeleton borderRadius={7} height={112} baseColor={SKELETON_COLOR} />
     </>);
