@@ -45,17 +45,17 @@ function GithubRepoAndContri() {
       <div className="grid grid-cols-12 gap-1">
         <div className="col-span-4">
           <Skeleton borderRadius={7}
-            height={90}
+            height={95}
             baseColor={SKELETON_COLOR} />
         </div>
         <div className="col-span-4">
           <Skeleton borderRadius={7}
-            height={90}
+            height={95}
             baseColor={SKELETON_COLOR} />
         </div>
         <div className="col-span-4">
           <Skeleton borderRadius={7}
-            height={90}
+            height={95}
             baseColor={SKELETON_COLOR} />
         </div>
       </div>
