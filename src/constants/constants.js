@@ -1,0 +1,1 @@
+export const SKELETON_COLOR = "#C4C4C4";
