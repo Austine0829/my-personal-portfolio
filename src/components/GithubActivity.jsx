@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css"; // ✅ add this
 
 function GithubActivity() {
   const [info, setInfo] = useState(null);
@@ -49,9 +51,12 @@ function GithubActivity() {
     fetchGitHubData();
   }, []);
 
-  if (!info) return <p>Loading...</p>;
+  if (!info) return (
+    <>
+      <Skeleton height={112} baseColor="#DBDBDB" />
+    </>
+  );
 
-  const repoCount = info.publicRepos?.totalCount ?? 0;
   const latestRepo = info.latestRepo?.nodes?.[0];
   const lastCommit = latestRepo?.defaultBranchRef?.target;
 
