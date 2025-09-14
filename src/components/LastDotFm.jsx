@@ -31,9 +31,9 @@ function LastDotFm() {
     fetchNowPlaying();
   }, []);
 
-  if (!track) return (
+  if (track) return (
     <>
-      <Skeleton height={112} baseColor="#DBDBDB" />
+      <Skeleton borderRadius={7} height={112} baseColor="#DBDBDB" />
     </>);
 
   return (
