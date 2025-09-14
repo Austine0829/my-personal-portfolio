@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { SKELETON_COLOR } from "../constants/constants";
 
 function GithubRepoAndContri() {
   const [info, setInfo] = useState(null);
@@ -45,17 +46,17 @@ function GithubRepoAndContri() {
         <div className="col-span-4">
           <Skeleton borderRadius={7}
             height={90}
-            highlightColor="#C4C4C4" />
+            baseColor={SKELETON_COLOR} />
         </div>
         <div className="col-span-4">
           <Skeleton borderRadius={7}
             height={90}
-            highlightColor="#C4C4C4" />
+            baseColor={SKELETON_COLOR} />
         </div>
         <div className="col-span-4">
           <Skeleton borderRadius={7}
             height={90}
-            highlightColor="#C4C4C4" />
+            baseColor={SKELETON_COLOR} />
         </div>
       </div>
     </>
