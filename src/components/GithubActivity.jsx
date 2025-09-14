@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css"; // ✅ add this
+import "react-loading-skeleton/dist/skeleton.css";
 import { SKELETON_COLOR } from "../constants/constants";
+import { USERNAME } from "../constants/constants";
 
 function GithubActivity() {
   const [info, setInfo] = useState(null);
@@ -10,7 +11,7 @@ function GithubActivity() {
     const fetchGitHubData = async () => {
       const query = `
         {
-          user(login: "Austine0829") {
+          user(login: "${USERNAME}") {
             publicRepos: repositories(privacy: PUBLIC) {
               totalCount
             }
