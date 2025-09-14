@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function GithubRepoAndContri() {
   const [info, setInfo] = useState(null);
@@ -37,7 +39,27 @@ function GithubRepoAndContri() {
     fetchGitHubData();
   }, []);
 
-  if (!info) return <p>Loading...</p>;
+  if (!info) return (
+    <>
+      <div className="grid grid-cols-12 gap-1">
+        <div className="col-span-4">
+          <Skeleton borderRadius={7}
+            height={90}
+            highlightColor="#C4C4C4" />
+        </div>
+        <div className="col-span-4">
+          <Skeleton borderRadius={7}
+            height={90}
+            highlightColor="#C4C4C4" />
+        </div>
+        <div className="col-span-4">
+          <Skeleton borderRadius={7}
+            height={90}
+            highlightColor="#C4C4C4" />
+        </div>
+      </div>
+    </>
+  );
 
   const repoCount = info.publicRepos?.totalCount ?? 0;
   const totalContributions = info.contributionsCollection?.contributionCalendar?.totalContributions ?? 0;
