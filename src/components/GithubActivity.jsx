@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css"; // ✅ add this
+import { SKELETON_COLOR } from "../constants/constants";
 
 function GithubActivity() {
   const [info, setInfo] = useState(null);
@@ -53,7 +54,7 @@ function GithubActivity() {
 
   if (!info) return (
     <>
-      <Skeleton height={112} baseColor="#DBDBDB" />
+      <Skeleton borderRadius={7} height={112} baseColor={SKELETON_COLOR} />
     </>
   );
 
