@@ -2,18 +2,15 @@ import { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { SKELETON_COLOR } from "../constants/constants";
+import { USERNAME } from "../constants/constants";
 
 function LastDotFm() {
   const [track, setTrack] = useState(null);
-  const defaultMusicImage = "https://i.pinimg.com/736x/92/d5/8a/92d58a1bde04466605206e5748f2f501.jpg";
-
-  const API_KEY = "7f311e9f684958c10d2849d5e6332864";
-  const USERNAME = "Austine0829";
 
   useEffect(() => {
     const fetchNowPlaying = async () => {
       try {
-        const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USERNAME}&api_key=${API_KEY}&format=json&limit=1`;
+        const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USERNAME}&api_key=${import.meta.env.VITE_LASTFM_API_KEY}&format=json&limit=1`;
         const res = await fetch(url);
         const data = await res.json();
 
@@ -41,13 +38,13 @@ function LastDotFm() {
     <>
       <div className="flex gap-2 overflow-x-hidden border h-full p-5 rounded-lg bg-white text-white"
         style={{
-          backgroundImage: `url(${defaultMusicImage})`,
+          backgroundImage: `url(/penguinnnn.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}>
         <div className="hidden border p-1 w-20 rounded-lg md:flex"
           style={{
-            backgroundImage: `url(${defaultMusicImage})`,
+            backgroundImage: `url(/penguinnnn.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center"
           }}>
