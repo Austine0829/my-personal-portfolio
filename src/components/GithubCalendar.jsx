@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import ActivityCalendar from "react-activity-calendar";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { SKELETON_COLOR } from "../constants/constants";
 
 async function fetchYearContributions(username, year, token) {
   const query = `
@@ -86,6 +89,16 @@ function GithubCalendar() {
     fetchAllYears();
   }, []);
 
+  if (!contributionData) {
+    return (
+      <>
+        <Skeleton borderRadius={7}
+          height={135}
+          baseColor={SKELETON_COLOR} />
+      </>
+    );
+  }
+
   return (
     <>
       {contributionData.length > 0 ? (
@@ -106,7 +119,9 @@ function GithubCalendar() {
           <p className="text-[10px] mt-1">{username} Github commits from 2024-16-02 to Present</p>
         </div>
       ) : (
-        <p>Loading...</p>
+        <Skeleton borderRadius={7}
+          height={135}
+          baseColor={SKELETON_COLOR} />
       )}
     </>
   );
