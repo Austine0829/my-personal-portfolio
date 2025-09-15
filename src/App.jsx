@@ -4,11 +4,10 @@ import Header from "./sections/header/Header"
 import TechlogiesMarquee from '../src/components/technologies/TechnologiesMarquee'
 import GithubStats from './sections/github_stats/GithubStats'
 import InterestMarquee from './sections/interest/InteresetMarquee'
-import Projects from './sections/projects/Projects'
-import { PROJECTS } from './constants/constants'
+import Panel from './sections/dynamic_panel/panel'
 
 function App() {
-  const [pageName, setPageName] = useState(PROJECTS);
+
 
   return (
     <>
@@ -22,13 +21,7 @@ function App() {
             <InterestMarquee />
           </div>
           <div className='flex flex-col gap-1 h-full w-full col-span-12'>
-            <div className='flex gap-1 border border-gray-300 bg-white p-1 rounded-lg'>
-              <button className='bg-gray-200 p-2 px-3 text-[13px] font-bold rounded-lg'>Projects</button>
-              <button className='bg-gray-200 p-2 px-3 text-[13px] font-bold rounded-lg'>Connect</button>
-            </div>
-            <div className='flex flex-col h-screen overflow-y-auto w-fit no-scrollbar '>
-              {pageName === PROJECTS && <Projects />}
-            </div>
+            <Panel />
           </div>
         </div>
       </div>
