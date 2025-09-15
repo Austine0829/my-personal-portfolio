@@ -1,5 +1,5 @@
-import GithubRepoAndContri from "./GithubRepoAndContri";
-import GithubCalendar from "./GithubCalendar";
+import GithubRepoAndContri from "../../components/github_stats/GithubRepoAndContri";
+import GithubCalendar from "../../components/github_stats/GithubCalendar";
 
 function GithubStats() {
   return (
