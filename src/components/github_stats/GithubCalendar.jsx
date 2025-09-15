@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import ActivityCalendar from "react-activity-calendar";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { SKELETON_COLOR } from "../constants/constants";
-import { USERNAME } from "../constants/constants";
+import { SKELETON_COLOR } from "../../constants/constants";
+import { USERNAME } from "../../constants/constants";
 
 async function fetchYearContributions(username, year, token) {
   const query = `
