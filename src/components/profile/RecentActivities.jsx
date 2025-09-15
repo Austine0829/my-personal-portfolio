@@ -1,5 +1,5 @@
-import GithubActivity from "../GithubActivity";
-import LastDotFm from "../LastDotFm";
+import GithubActivity from "./GithubActivity";
+import LastDotFm from "./LastDotFm";
 
 function RecentActivities() {
   return (
