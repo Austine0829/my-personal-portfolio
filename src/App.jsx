@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
-import Profile from './components/Profile'
-import Header from "./components/Header"
-import RecentActivities from './components/RecentActivities'
-import TechlogiesMarquee from './components/TechnologiesMarquee'
-import GithubStats from './components/GithubStats'
-import InterestMarquee from './components/InteresetMarquee'
-import Projects from './components/Projects'
+import Profile from "../src/components/profile/Profile"
+import Header from "./sections/header/Header"
+import TechlogiesMarquee from '../src/components/technologies/TechnologiesMarquee'
+import GithubStats from './sections/github_stats/GithubStats'
+import InterestMarquee from './sections/interest/InteresetMarquee'
+import Projects from './sections/projects/Projects'
+import { PROJECTS } from './constants/constants'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [pageName, setPageName] = useState(PROJECTS);
 
   return (
     <>
@@ -27,7 +27,7 @@ function App() {
               <button className='bg-gray-200 p-2 px-3 text-[13px] font-bold rounded-lg'>Connect</button>
             </div>
             <div className='flex flex-col h-screen overflow-y-auto w-fit no-scrollbar '>
-              <Projects />
+              {pageName === PROJECTS && <Projects />}
             </div>
           </div>
         </div>
