@@ -1,5 +1,5 @@
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
-import overloadImg from "../assets/projects/overload.png"
+import overloadImg from "../../assets/projects/overload.png"
 
 function Project() {
   return (
