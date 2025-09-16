@@ -3,4 +3,4 @@ export const SKELETON_COLOR = "#C4C4C4";
 export const USERNAME = "Austine0829";
 
 export const PROJECTS = "Projects";
-export const CONTACT = "Contact";
+export const CONNECT = "Connect";
