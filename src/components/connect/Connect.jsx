@@ -107,7 +107,7 @@ function Connect() {
             {
               inputs.name.length <= 5 &&
               inputs.name.length > 0 &&
-              <span className="absolute text-[10px] left-2 top-1">Minimun character is 6</span>
+              <span className="absolute text-[10px] left-2 top-1">Minimum character is 6</span>
             }
 
             <input className={`text-[13px] h-12 w-full p-2 bg-gray-200 rounded-lg ${inputs.name.length <= 5 && inputs.name.length != 0 && 'pt-4 bg-red-100'}`}
