@@ -13,7 +13,7 @@ function App() {
     <>
       <div className="lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center">
         <div className="grid grid-cols-12 gap-4 h-full w-full p-4 lg:flex lg:max-h-[768px] lg:max-w-[1920px]">
-          <div className='flex flex-col gap-1 col-span-12 overflow-y-auto no-scrollbar'>
+          <div className='flex flex-col gap-1 col-span-12 overflow-y-auto no-scrollbar lg:max-w-[855px]'>
             <Header />
             <Profile />
             <TechlogiesMarquee />
