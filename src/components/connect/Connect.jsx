@@ -125,7 +125,7 @@ function Connect() {
             name="message"
             onChange={inputHandler}></textarea>
         </div>
-        <button className={`text-[13px] w-fit font-bold text-white bg-black border p-2 mt-2 rounded-lg cursor-pointer ${isGmail && inputs.name.length > 5 && inputs.message.length != 0 ? 'bg-black' : 'bg-gray-300'}`}
+        <button className={`text-[13px] w-fit font-bold text-white bg-black border p-2 mt-2 rounded-lg ${isGmail && inputs.name.length > 5 && inputs.message.length != 0 ? 'bg-black cursor-pointer' : 'bg-gray-300'}`}
           onClick={sendEmail}
           disabled={!(isGmail &&
             inputs.name.length > 5 &&
