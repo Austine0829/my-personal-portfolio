@@ -21,7 +21,7 @@ function Projects() {
 
   return (
     <>
-      <div className="flex flex-col gap-1 bg-gray-200 p-1 rounded-lg max-h-[768px]">
+      <div className="flex flex-col gap-1 bg-gray-200 p-1 rounded-lg">
         {
           projects.map(project => (
             <Project data={project} />

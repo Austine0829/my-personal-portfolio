@@ -25,7 +25,7 @@ function Panel() {
 					isActive={pageName === CONNECT}
 					onClick={() => { setPageName(CONNECT) }} />
 			</div>
-			<div className='flex flex-col overflow-y-auto no-scrollbar '>
+			<div className='flex flex-col overflow-y-auto no-scrollbar max-h-[768px]'>
 				{pageName === PROJECTS && <Projects />}
 				{pageName === CONNECT && <Connect />}
 			</div>
