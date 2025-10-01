@@ -12,7 +12,7 @@ function Profile() {
             and currently a second-year Bachelor of Science in
             Information Technology student at Pampanga State University (formerly DHVSU). Driven by curiosity, I
             have explored various programming languages, frameworks, and tools to
-            solve problems, automate processes, and work towards building scalable applications in the future.
+            solve problems, and automate processes.
           </p>
         </div>
         <div className="col-span-12 xl:col-span-5">
