@@ -7,20 +7,18 @@ import InterestMarquee from './sections/interest/InteresetMarquee'
 import Panel from './sections/dynamic_panel/panel'
 
 function App() {
-
-
   return (
     <>
       <div className="lg:absolute lg:inset-0 lg:flex lg:items-center lg:justify-center">
-        <div className="grid grid-cols-12 gap-4 h-full w-full p-4 lg:flex lg:max-h-[768px] lg:max-w-[1920px]">
-          <div className='flex flex-col gap-1 col-span-12 overflow-y-auto no-scrollbar lg:max-w-[855px]'>
+        <div className="grid grid-cols-12 gap-4 h-full w-full p-4 lg:flex lg:max-h-[768px] xl:max-w-[1920px]">
+          <div className='flex flex-col gap-1 col-span-12 overflow-y-auto no-scrollbar lg:flex-1'>
             <Header />
             <Profile />
             <TechlogiesMarquee />
             <GithubStats />
             <InterestMarquee />
           </div>
-          <div className='flex flex-col gap-1 h-full w-full col-span-12'>
+          <div className='flex flex-col gap-1 h-full w-full col-span-12 lg:flex-1'>
             <Panel />
           </div>
         </div>
