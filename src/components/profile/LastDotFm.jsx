@@ -18,9 +18,11 @@ function LastDotFm() {
           const latest = data.recenttracks.track[0];
           setTrack({
             name: latest.name,
-            artist: latest.artist["#text"]
+            artist: latest.artist["#text"],
+            albumImage: latest.image.find(img => img.size === 'extralarge')?.['#text'] ?? ""
           });
         }
+
       } catch (err) {
         console.error("Error fetching Last.fm data:", err);
       }
@@ -36,19 +38,23 @@ function LastDotFm() {
 
   return (
     <>
-      <div className="flex gap-2 overflow-x-hidden border h-full p-5 rounded-lg bg-white text-white"
+     <div className="relative overflow-hidden flex gap-2 border h-full p-5 rounded-lg text-white border-gray-300">
+      <div className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(/penguinnnn.jpg)`,
+          backgroundImage: track.albumImage != "" ? `url(${track.albumImage})` : 'url(/penguinnnn.jpg)',
           backgroundSize: "cover",
-          backgroundPosition: "center"
-        }}>
-        <div className="hidden border p-1 w-20 rounded-lg md:flex"
+          backgroundPosition: "center",
+          filter: "blur(7px)",
+          transform: "scale(1.1)"
+        }} />
+      <div className="relative z-10 flex gap-2 w-full">
+        <div className="hidden border p-1 w-20 rounded-lg md:flex border-gray-300 flex-shrink-0"
           style={{
-            backgroundImage: `url(/penguinnnn.jpg)`,
+            backgroundImage: track.albumImage != "" ? `url(${track.albumImage})` : 'url(/penguinnnn.jpg)',
             backgroundSize: "cover",
             backgroundPosition: "center"
-          }}>
-        </div>
+          }} />
+
         <div className="flex flex-col text-center justify-center md:text-start md:justify-start">
           <h1 className="text-[10px] truncate">
             Last.fm | last played song...
@@ -56,11 +62,12 @@ function LastDotFm() {
           <p className="text-[13px] font-bold">
             {track.name}
           </p>
-          <h2 className="text-[10px]" >
+          <h2 className="text-[10px]">
             {track.artist}
           </h2>
         </div>
       </div>
+    </div>
     </>);
 }
 
