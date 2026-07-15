@@ -78,7 +78,11 @@ function GithubActivity() {
           </p>
           <h2 className="text-[10px] " >
             {lastCommit.messageHeadline.length > 40 ? 
-             <Marquee speed={25}>{lastCommit.messageHeadline}</Marquee> : 
+             <Marquee speed={25}>
+              <span className="pr-10">
+                  {lastCommit.messageHeadline}
+              </span>
+              </Marquee> : 
              lastCommit.messageHeadline
             }
           </h2>
