@@ -66,7 +66,7 @@ function GithubActivity() {
   return (
     <>
       <div className="flex gap-2 overflow-x-hidden border h-full p-5 rounded-lg bg-white border-gray-300">
-        <div className="hidden justify-center border px-2 rounded-lg md:flex bg-white border-gray-300">
+        <div className="hidden justify-center border w-20 px-2 rounded-lg md:flex bg-white border-gray-300">
           <i className="si si-github text-[50px]"></i>
         </div>
         <div className="flex flex-col justify-center text-center md:justify-start md:text-start min-w-0 flex-1">
@@ -77,7 +77,7 @@ function GithubActivity() {
             {latestRepo.name}
           </p>
           <h2 className="text-[10px] " >
-            {lastCommit.messageHeadline.length > 40 ? 
+            {lastCommit.messageHeadline.length > 50 ? 
              <Marquee speed={25}>
               <span className="pr-10">
                   {lastCommit.messageHeadline}
