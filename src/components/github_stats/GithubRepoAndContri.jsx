@@ -7,39 +7,68 @@ import { USERNAME } from "../../constants/constants";
 function GithubRepoAndContri() {
   const [info, setInfo] = useState(null);
 
-  useEffect(() => {
-    const fetchGitHubData = async () => {
-      const query = `
+ useEffect(() => {
+  const fetchGitHubData = async () => {
+    const currentYear = new Date().getFullYear();
+    const startYear = 2024;
+
+    const yearlyQueries = [];
+
+    for (let year = startYear; year <= currentYear; year++) {
+      yearlyQueries.push(`
+        y${year}: contributionsCollection(
+          from: "${year}-01-01T00:00:00Z"
+          to: "${year}-12-31T23:59:59Z"
+        ) {
+          contributionCalendar {
+            totalContributions
+          }
+        }
+      `);
+    }
+
+    const query = `
       {
         user(login: "${USERNAME}") {
           publicRepos: repositories(privacy: PUBLIC) {
             totalCount
           }
-          contributionsCollection {
-            contributionCalendar {
-              totalContributions
-            }
-          }
+
+          ${yearlyQueries.join("\n")}
         }
       }
     `;
 
-      const response = await fetch("https://api.github.com/graphql", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
-        },
-        body: JSON.stringify({ query }),
-      });
+    const response = await fetch("https://api.github.com/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
+      },
+      body: JSON.stringify({ query }),
+    });
 
-      const json = await response.json();
-      console.log("🔍 Full API response:", JSON.stringify(json, null, 2));
-      setInfo(json.data.user);
-    };
+    const json = await response.json();
 
-    fetchGitHubData();
-  }, []);
+    console.log(json);
+
+    const user = json.data.user;
+
+    let totalContributions = 0;
+
+    for (let year = startYear; year <= currentYear; year++) {
+      totalContributions +=
+        user[`y${year}`].contributionCalendar.totalContributions;
+    }
+
+    setInfo({
+      ...user,
+      totalContributions,
+    });
+  };
+
+  fetchGitHubData();
+}, []);
 
   if (!info) return (
     <>
@@ -64,7 +93,7 @@ function GithubRepoAndContri() {
   );
 
   const repoCount = info.publicRepos?.totalCount ?? 0;
-  const totalContributions = info.contributionsCollection?.contributionCalendar?.totalContributions ?? 0;
+  const totalContributions = info?.totalContributions ?? 0;
 
   return (
     <>
