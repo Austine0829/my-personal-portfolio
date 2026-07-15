@@ -3,6 +3,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { SKELETON_COLOR } from "../../constants/constants";
 import { USERNAME } from "../../constants/constants";
+import Marquee from "react-fast-marquee";
 
 function GithubActivity() {
   const [info, setInfo] = useState(null);
@@ -64,19 +65,22 @@ function GithubActivity() {
 
   return (
     <>
-      <div className="flex justify-center md:justify-start gap-2 overflow-x-hidden border h-full p-5 rounded-lg bg-white border-gray-300">
-        <div className="hidden justify-center border w-20 px-2 rounded-lg md:flex bg-white border-gray-300">
+      <div className="flex gap-2 overflow-x-hidden border h-full p-5 rounded-lg bg-white border-gray-300">
+        <div className="hidden justify-center border px-2 rounded-lg md:flex bg-white border-gray-300">
           <i className="si si-github text-[50px]"></i>
         </div>
-        <div className="flex flex-col justify-center text-center md:justify-start md:text-start">
+        <div className="flex flex-col justify-center text-center md:justify-start md:text-start min-w-0 flex-1">
           <h1 className="text-[10px]">
             Github | {new Date(lastCommit.committedDate).toDateString()}
           </h1>
           <p className="text-[13px] font-bold">
             {latestRepo.name}
           </p>
-          <h2 className="text-[10px]" >
-            {lastCommit.messageHeadline}
+          <h2 className="text-[10px] " >
+            {lastCommit.messageHeadline.length > 20 ? 
+             <Marquee speed={20}>{lastCommit.messageHeadline}</Marquee> : 
+             lastCommit.messageHeadline
+            }
           </h2>
         </div>
       </div>
