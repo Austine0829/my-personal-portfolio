@@ -77,8 +77,8 @@ function GithubActivity() {
             {latestRepo.name}
           </p>
           <h2 className="text-[10px] " >
-            {lastCommit.messageHeadline.length > 20 ? 
-             <Marquee speed={20}>{lastCommit.messageHeadline}</Marquee> : 
+            {lastCommit.messageHeadline.length > 40 ? 
+             <Marquee speed={25}>{lastCommit.messageHeadline}</Marquee> : 
              lastCommit.messageHeadline
             }
           </h2>
