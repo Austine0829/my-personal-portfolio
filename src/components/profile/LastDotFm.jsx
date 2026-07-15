@@ -47,7 +47,7 @@ function LastDotFm() {
           filter: "blur(7px)",
           transform: "scale(1.1)"
         }} />
-      <div className="relative z-10 flex gap-2 w-full">
+      <div className="relative z-10 flex justify-center md:justify-start gap-2 w-full">
         <div className="hidden border p-1 w-20 rounded-lg md:flex border-gray-300 flex-shrink-0"
           style={{
             backgroundImage: track.albumImage != "" ? `url(${track.albumImage})` : 'url(/penguinnnn.jpg)',
