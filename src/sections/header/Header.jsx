@@ -1,4 +1,5 @@
-import { MapPinIcon } from '@heroicons/react/24/outline'
+import { MapPinIcon } from "@heroicons/react/24/solid";
+
 
 function Header() {
   return (
