@@ -8,11 +8,11 @@ function Profile() {
           <img className="w-full rounded-2xl md:w-96"
             src="/portfolio_profile.jpg" />
           <p className="text-[10px]">
-            A 23-year-old Filipino, <span className="bg-black text-white">Programmer in the making</span>,
+            A 23-year-old Filipino, <span className="bg-black text-white">multidisciplinary programmer in the making</span>,
             and currently a third-year Bachelor of Science in
-            Information Technology student at Pampanga State University (formerly DHVSU). As a curiosity-driven programmer, 
-            I have explored various programming languages, frameworks, and tools to solve problems, automate processes, 
-            and build systems that I have an interest with.
+            Information Technology student at Pampanga State University (formerly DHVSU). A curiosity-driven programmer, 
+            that explores various stuff about technology, programming languages, frameworks, and tools to solve problems, 
+            automate processes, and build systems that can just be acquired thru subscriptions, but still chooses to waste it's life and build them for months just to save a penny.
           </p>
         </div>
         <div className="col-span-12">
